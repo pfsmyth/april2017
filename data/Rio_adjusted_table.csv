@@ -1,0 +1,88 @@
+Pos,Country,Gold,Silver,Bronze,Total,Total2,points,Rank
+1,US,46,37,38,121,View medals by sport for United States,250,1
+2,GB,27,23,17,67,View medals by sport for Great Britain & N. Ireland,144,2
+3,CHN,26,18,26,70,View medals by sport for China,140,3
+4,RUS,19,18,19,56,View medals by sport for Russia,112,4
+5,GER,17,10,15,42,View medals by sport for Germany,86,5
+7,FRA,10,18,14,42,View medals by sport for France,80,6
+6,JPN,12,8,21,41,View medals by sport for Japan,73,7
+9,ITA,8,12,8,28,View medals by sport for Italy,56,8
+10,AUS,8,11,10,29,View medals by sport for Australia,56,8
+8,KOR,9,3,9,21,View medals by sport for South Korea,42,10
+11,NED,8,7,4,19,View medals by sport for Netherlands,42,10
+13,BRZ,7,6,6,19,View medals by sport for Brazil,39,12
+14,SPA,7,4,6,17,View medals by sport for Spain,35,13
+19,NZ,4,9,5,18,View medals by sport for New Zealand,35,13
+12,HUN,8,3,4,15,View medals by sport for Hungary,34,15
+20,CAN,4,3,15,22,View medals by sport for Canada,33,16
+15,KEN,6,6,1,13,View medals by sport for Kenya,31,17
+22,KAZ,3,5,9,17,View medals by sport for Kazakhstan,28,18
+39,AZE,1,7,10,18,View medals by sport for Azerbaijan,27,19
+16,JAM,6,3,2,11,View medals by sport for Jamaica,26,20
+28,DEN,2,6,7,15,View medals by sport for Denmark,25,21
+17,CRO,5,3,2,10,View medals by sport for Croatia,23,22
+18,CUB,5,2,4,11,View medals by sport for Cuba,23,22
+21,UZB,4,2,7,13,View medals by sport for Uzbekistan,23,22
+29,SWE,2,6,3,11,View medals by sport for Sweden,21,25
+31,UKR,2,5,4,11,View medals by sport for Ukraine,20,26
+30,SA,2,6,2,10,View medals by sport for South Africa,20,26
+33,POL,2,3,6,11,View medals by sport for Poland,18,28
+23,COL,3,2,3,8,View medals by sport for Colombia,16,29
+32,SER,2,4,2,8,View medals by sport for Serbia,16,29
+40,BLR,1,4,4,9,View medals by sport for Belarus,15,31
+25,IRN,3,1,4,8,View medals by sport for Iran,15,31
+24,SWI,3,2,2,7,View medals by sport for Switzerland,15,31
+34,PRK,2,3,2,7,View medals by sport for North Korea,14,34
+43,CZE,1,2,7,10,View medals by sport for Czech Republic,14,34
+41,TUR,1,3,4,8,View medals by sport for Turkey,13,36
+26,GRE,3,1,2,6,View medals by sport for Greece,13,36
+44,ETH,1,2,5,8,View medals by sport for Ethiopia,12,38
+38,GEO,2,1,4,7,View medals by sport for Georgia,12,38
+35,THA,2,2,2,6,View medals by sport for Thailand,12,38
+35,BEL,2,2,2,6,View medals by sport for Belgium,12,38
+27,ARG,3,1,0,4,View medals by sport for Argentina,11,42
+37,SVK,2,2,0,4,View medals by sport for Slovakia,10,43
+42,ARM,1,3,0,4,View medals by sport for Armenia,9,44
+60,MAS,0,4,1,5,View medals by sport for Malaysia,9,44
+47,ROM,1,1,3,5,View medals by sport for Romania,8,46
+61,MEX,0,3,2,5,View medals by sport for Mexico,8,46
+45,SLO,1,2,1,4,View medals by sport for Slovenia,8,46
+46,IDN,1,2,0,3,View medals by sport for Indonesia,7,49
+48,VIE,1,1,0,2,View medals by sport for Vietnam,5,50
+50,TPE,1,0,2,3,View medals by sport for Chinese Taipei,5,50
+64,LTU,0,1,3,4,View medals by sport for Lithuania,5,50
+48,BHR,1,1,0,2,View medals by sport for Bahrain,5,50
+74,NOR,0,0,4,4,View medals by sport for Norway,4,54
+65,VEN,0,1,2,3,View medals by sport for Venezuela,4,54
+65,BUL,0,1,2,3,View medals by sport for Bulgaria,4,54
+62,ALG,0,2,0,2,View medals by sport for Algeria,4,54
+62,IRE,0,2,0,2,View medals by sport for Ireland,4,54
+51,CIV,1,0,1,2,View medals by sport for Ivory Coast,4,54
+51,IOA,1,0,1,2,View medals by sport for Independent Olympic Athletes,4,54
+51,BAH,1,0,1,2,View medals by sport for Bahamas,4,54
+54,TJK,1,0,0,1,View medals by sport for Tajikistan,3,62
+54,SIN,1,0,0,1,View medals by sport for Singapore,3,62
+54,PUR,1,0,0,1,View medals by sport for Puerto Rico,3,62
+54,KOS,1,0,0,1,View medals by sport for Kosovo,3,62
+54,JOR,1,0,0,1,View medals by sport for Jordan,3,62
+54,FIJ,1,0,0,1,View medals by sport for Fiji,3,62
+67,IND,0,1,1,2,View medals by sport for India,3,62
+67,MGL,0,1,1,2,View medals by sport for Mongolia,3,62
+75,TUN,0,0,3,3,View medals by sport for Tunisia,3,62
+75,EGY,0,0,3,3,View medals by sport for Egypt,3,62
+77,ISR,0,0,2,2,View medals by sport for Israel,2,72
+69,QAT,0,1,0,1,View medals by sport for Qatar,2,72
+69,PHI,0,1,0,1,View medals by sport for Philippines,2,72
+69,NIG,0,1,0,1,View medals by sport for Niger,2,72
+69,GRN,0,1,0,1,View medals by sport for Grenada,2,72
+69,BDI,0,1,0,1,View medals by sport for Burundi,2,72
+78,AUT,0,0,1,1,View medals by sport for Austria,1,78
+78,DOM,0,0,1,1,View medals by sport for Dominican Republic,1,78
+78,EST,0,0,1,1,View medals by sport for Estonia,1,78
+78,FIN,0,0,1,1,View medals by sport for Finland,1,78
+78,MDA,0,0,1,1,View medals by sport for Moldova,1,78
+78,MOR,0,0,1,1,View medals by sport for Morocco,1,78
+78,NGA,0,0,1,1,View medals by sport for Nigeria,1,78
+78,POR,0,0,1,1,View medals by sport for Portugal,1,78
+78,TRI,0,0,1,1,View medals by sport for Trinidad and Tobago,1,78
+78,UAE,0,0,1,1,View medals by sport for United Arab Emirates,1,78
