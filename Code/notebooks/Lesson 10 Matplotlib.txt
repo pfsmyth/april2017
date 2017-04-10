@@ -1,0 +1,146 @@
+# Because we are only going to look at pyplot, we can be more specific on the import statement
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+------------------------------------------
+
+#First simple plot
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+
+-----------------------------------------
+
+# the 3rd parameter to plot , 'ro' means red circles. the default is 'b-' (blue line) which is what we had before
+# these values are are the same as used by MATLAB
+plt.plot([1,2,3,4], [1,4,9,16], 'ro')
+plt.axis([0, 6, 0, 20])
+plt.show()
+
+-------------------------------------------
+
+# other examples 
+import numpy as np
+import matplotlib.pyplot as plt
+
+# evenly sampled time at 200ms intervals
+t = np.arange(0., 5., 0.2)
+
+# red dashes, blue squares and green triangles
+# using a multiple plot statement
+plt.plot(t, t, 'r--')
+plt.plot(t, t**2, 'bs')
+plt.plot(t, t**3, 'g^')
+plt.show()
+
+
+----------------------------------------------------
+
+
+# altenatively, you can plot all of the lines with a single plot statement.
+plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
+plt.show()
+
+--------------------------------------------------
+
+plt.plot([1,2,3,4], [1,4,9,16], linewidth=6.0)
+plt.show()
+
+------------------------------------------------
+
+line, = plt.plot([1,2,3,4], [1,4,9,16], '-')
+line.set_antialiased(False) # turn off antialising
+
+------------------------------------------------
+
+# Histogram - using random data
+# Adding text and legends
+
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+# Fixing random state for reproducibility
+np.random.seed(1111)
+
+mu, sigma = 100, 15
+x = mu + sigma * np.random.randn(10000)
+
+np.random.seed(2222)
+
+mu, sigma = 80, 20
+y = mu + sigma * np.random.randn(10000)
+
+# the histogram of the data
+plt.hist(x, 50, normed=1, facecolor='b', alpha=0.5, label = 'x')
+plt.hist(y, 50, normed=1, facecolor='y', alpha=0.5, label = 'y')
+# add the legend for the label
+plt.legend(loc='upper right')
+
+# setting the x axis label
+plt.xlabel('Smarts')
+
+# setting the y axis label
+plt.ylabel('Probability')
+
+# Setting the title
+plt.title('Histogram of IQ')
+
+# explicitly specify the x and y axis ranges
+plt.axis([40, 160, 0, 0.03])
+
+# Show the gridlines if you want them
+plt.grid(True)
+
+# add some text. The first two parameters are the x and y coordinates of the bottom left of the text
+plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
+plt.text(40, .010, r'$\mu=80,\ \sigma=20$')
+
+plt.show()
+
+------------------------------------------------------
+
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+# create some fake data
+spread = np.random.rand(50) * 100
+center = np.ones(25) * 50
+flier_high = np.random.rand(10) * 100 + 100
+flier_low = np.random.rand(10) * -100
+d1 = np.concatenate((spread, center, flier_high, flier_low), 0)
+
+fig1, ax1 = plt.subplots()
+ax1.set_title('Basic Plot')
+ax1.boxplot(d1)
+
+fig2, ax2 = plt.subplots()
+ax2.set_title('Notched boxes')
+ax2.boxplot(d1, notch=True)
+
+plt.show()
+
+-----------------------------------------------------
+
+# fake up some more data
+
+spread = np.random.rand(50) * 100
+center = np.ones(25) * 50
+flier_high = np.random.rand(10) * 100 + 100
+flier_low = np.random.rand(10) * -100
+d2 = np.concatenate((spread, center, flier_high, flier_low), 0)
+
+spread = np.random.rand(50) * 100
+center = np.ones(25) * 50
+flier_high = np.random.rand(10) * 100 + 100
+flier_low = np.random.rand(10) * -100
+d3 = np.concatenate((spread, center, flier_high, flier_low), 0)
+
+
+data = [d1, d2, d3]
+# multiple box plots on one figure
+plt.figure()
+plt.boxplot(data)
+
+plt.show()

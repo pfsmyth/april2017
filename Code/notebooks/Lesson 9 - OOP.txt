@@ -1,0 +1,141 @@
+# OOP notebook
+
+# taken from 
+# https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial/Classes 
+
+#An example of a class
+class Shape:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.description = "This shape has not been described yet"
+        self.author = "Nobody has claimed to make this shape yet"
+
+    def area(self):
+        return self.x * self.y
+
+    def perimeter(self):
+        return 2 * self.x + 2 * self.y
+
+    def describe(self, text):
+        self.description = text
+
+    def authorName(self, text):
+        self.author = text
+
+    def scaleSize(self, scale):
+        self.x = self.x * scale
+        self.y = self.y * scale
+        
+
+
+
+Points to note
+
+    The class definition starts with the word class followed by the name of the class and a :
+    What follows is a series of Method definitions. A method is the same as a function in Object terminology
+    In general a method definition is the same as for any other function
+    the first parameter to a method is 'self'. This refers to the particular instantiation of the object itself, it allows the variables declared in the __init__ method to be available to them.
+    When you creat an object of the class or use it's methods, you do not specifiy the self parameter.
+    The __init__ method, is not mandatory but nearly always exists to pass parameter values into the object and to create internal variables used by the object
+
+
+-----------------------------------
+
+#creating a variable of type Shape  -    NON OOP speak
+
+rectangle = Shape(100, 45)
+
+#finding the area of your rectangle:
+print(rectangle.area())
+
+#finding the perimeter of your rectangle:
+print(rectangle.perimeter())
+
+#describing the rectangle
+rectangle.describe("A wide rectangle, more than twice as wide as it is tall")
+
+print(rectangle.description)
+
+#making the rectangle 50% smaller
+rectangle.scaleSize(0.5)
+
+#re-printing the new area of the rectangle
+print(rectangle.area())
+
+Points to note:
+
+    To create an object, you use the class name in place of __init\\ (and you don't use the self parameter)
+    To call a method you use the '.' notation, providing parameters if needed
+    Te same applies if you wish to set an object variable
+
+----------------------------------
+
+#If you want to know what is in the object you can call dir
+dir(rectangle)
+
+Points to note:
+
+    everything starting and ending __ is internal and shouldn't be directly referenced.
+    All of the variables and methods of the object are listed but not distinguished
+    If you use an object in IDLE you will automatically get help with a list
+
+---------------------------
+
+To demonstrate inheritance, we can use the definition of Shape to create a specific type of shape - a square
+
+
+class Square(Shape):
+    def __init__(self,x):
+        self.x = x
+        self.y = x
+
+Points to note:
+
+    The name of the class we are inheriting from is given as a parameter in the definition.
+    All of the variables and methods of that class are automatically included in the new class
+    We could add new methods if we wanted to.
+    In this case, all we need to do is overwrite the __init__ class to define a square. We now only need an x parameter and the inherited self.y (from the Shape class) is also assigned the value of x
+
+------------------------------------------------
+
+small_square = Square(4)
+print(small_square.area())
+
+large_square = small_square 
+small_square.describe("small square")
+large_square.scaleSize(10)
+print(large_square.area())
+
+print(large_square.description)
+
+large_square.describe("large square")
+print(small_square.description)
+
+Points to note:
+
+    We can create an instance of Square in the same way as we did for Shape. But only the x parameter is needed
+    The area and scalesize methods are inherited from Shape and are used in exactly the same way
+    You can assign one object to another in the same way as you do for simple variables.
+    but the effect is different - the new object points to the same copy (memory location) as the original. So changes in the original will be changes in the new and vice versa
+
+------------------------------------------------------
+
+import copy
+
+small_square = Square(4)
+print(small_square.area())
+
+small_square.describe("small square")
+print(small_square.description)
+
+large_square = copy.deepcopy(small_square)
+
+small_square.describe("small square")
+large_square.scaleSize(10)
+print(large_square.area())
+
+large_square.describe("large square")
+print(large_square.description)
+print(small_square.description)

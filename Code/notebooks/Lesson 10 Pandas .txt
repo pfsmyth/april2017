@@ -1,0 +1,211 @@
+Pandas
+Pandas is a Python package like any other.
+You need to install it on your system using pip
+And then to use it in a program, you need to import the package
+
+---------------------------------
+
+import pandas as pd
+from pprint import pprint
+
+--------------------------------------------
+
+df1 = pd.DataFrame([[1, 2], [1, 4], [5, 6]],
+columns=['A', 'B'])
+df1
+
+?-------------------------------------------
+
+df1.head()
+
+----------------------------------------
+
+df1.shape
+
+?------------------------------------------
+
+# getting nformation on method
+pd.read_csv?
+
+--------------------------------------------
+
+Writing filenames on a Windows system
+Because Windows uses the '\' as a folder seperator and Python tries to treat it as an escape character, care is needed when refrerring to filenames in Python on a Windows machine.
+There are however several way of doing it as shown below.
+------------------------------------------------------------
+# use \\ instead of \
+my_df = pd.read_csv("D:\\data\\geog.csv")
+
+-------------------------------------------------
+
+# use / instead of \
+my_df = pd.read_csv("D:/data/geog.csv")
+
+------------------------------------------------
+
+# prefix the string (i.e. before the opening ") with an 'r' to indicate Raw data 
+# - i.e. do not try to interpret the string
+
+my_df = pd.read_csv(r"D:\data\geog.csv")
+
+-------------------------------------------------
+
+# how many records are there 
+len(my_df)
+
+---------------------------------------------------------
+
+# show the data frame (or the top and bottom of it
+my_df
+
+?---------------------------------------------------------
+
+# count number of Not NA or missing values for each variable
+my_df.count()
+
+---------------------------------------------------------
+
+# number of unique values for a specific column
+print(len(my_df['NUTS4'].unique()))
+
+?---------------------------------------------------------
+
+my_df.columns
+
+---------------------------------------------------------
+
+list(my_df)
+
+---------------------------------------------------------
+
+for x in list(my_df) :
+    print len(my_df[x].unique()), "\t", x
+
+---------------------------------------------------------
+
+# values of specific column
+print(my_df.ACORN_Category.unique())
+
+# values of specific column
+print(my_df.fuelTypes.unique())
+
+# values of specific column
+x = my_df.fuelTypes.unique()[0]
+
+print(x)
+y = my_df['ACORN_Category']
+y
+
+?
+
+---------------------------------------------------------
+
+# count of each value in column  - without using group_by
+
+a = my_df.fuelTypes.value_counts()
+a
+
+---------------------------------------------------------
+
+# for numeric columns, you can get basic statistics
+# The warning is because there are a few missing values
+my_df.describe()
+
+---------------------------------------------------------
+
+my_df[my_df['ACORN_Category'] == 0]
+
+---------------------------------------------------------
+
+# select rows based on column criteria
+my_df[my_df['anonID'] < 25]
+
+---------------------------------------------------------
+
+# you can get rid of the missing values with the dropna method
+my_df = my_df.dropna()
+
+--------------------------------------------------------------
+Rows containing missing values can be removed by using the dropna ethod
+---------------------------------------------------------
+
+# count number of Not NA or missing values for each variable
+my_df.count()
+
+?---------------------------------------------------------
+
+# select rows based on column criteria
+my_df[my_df['ACORN_Category'] == 0]
+
+---------------------------------------------------------
+# now run the describe again
+# for numeric columns, you can get basic statistics
+# The warning is because there are a few missing values
+
+my_df.describe()
+
+---------------------------------------------------------
+# more complex selections
+#my_df[my_df.ACORN_Category == 6]
+#my_df[(my_df.anonID <= 10) & (my_df.ACORN_Group == 'M')]
+
+my_df[(my_df.anonID <= 10) & (my_df.ACORN_Group == 'M')][['anonID', 'fuelTypes']]
+
+?---------------------------------------------------------
+# values of specific column
+my_df.ACORN_Group.unique()
+
+---------------------------------------------------------
+
+# group by specific column and count of values
+
+x = my_df.groupby("ACORN_Category").size()
+
+x
+
+---------------------------------------------------------
+
+# group by specific column and count of values
+x = my_df.groupby("ACORN_Category")
+type(x)
+
+---------------------------------------------------------
+
+# a helper function to print the contents of the groups
+def print_groups (groupobject):
+    # loop over all groups, printing the group name 
+    # and group details
+    for name, group in groupobject:
+        print (name)
+        print (group)
+
+print_groups(x)
+
+ 
+---------------------------------------------------------
+x.size()
+---------------------------------------------------------
+x.get_group(1)
+---------------------------------------------------------
+x.get_group(1)[['anonID']]
+--------------------------------------------------------
+# group by specific column and count of values
+x = my_df.groupby('fuelTypes')
+
+#print_groups(x)
+x.get_group('Dual')[['anonID']]
+
+---------------------------------------------------------
+# The simple plotting functions of Pandas, make use of the Matplotlib package, so it has to be loaded.
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+
+---------------------------------------------------------
+# Histogram of ACORN_Category
+my_df['ACORN_Category'].plot.hist()
+
+?
+---------------------------------------------------------
+my_df.plot.scatter(x='ACORN_Category', y='ACORN_Type')
+
