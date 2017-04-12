@@ -1,7 +1,9 @@
 # simple div by 0
 
 x = 6
-print x/0
+
+y =0
+print x/y
 
 
 #  div by 0 when i gets down to 6

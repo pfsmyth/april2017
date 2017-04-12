@@ -13,6 +13,8 @@ def xtimesprint(printme, howoften) :
         returnstring = returnstring + printme
     return returnstring
 
-printme = "Hello World "
+printme = "Hello World"
 printme = xtimesprint(printme, 3)
 print printme
+
+
